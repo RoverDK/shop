@@ -1,0 +1,39 @@
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+}
+
+.icon-fix{
+    vertical-align: -0.125em;
+}
+
+.ul-fix{
+    list-style-type: none;
+}
+
+.navbar-toggler{
+    font-size: 1rem;
+}
+
+.dollar{
+    color:rgb(0, 90, 38);
+}
+
+.loader{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: spin 3s infinite linear;
+}
+
+@keyframes spin{
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
