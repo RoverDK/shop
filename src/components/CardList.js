@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
-import { ffetch } from "../api"
+import { getItems } from "../api"
 import { ItemCard } from "./ItemCard"
-
-import loaderImg from '../images/loaderImg.png'
+import { Loader } from "./Loader";
 
 export const CardList = () => {
 
@@ -11,7 +10,7 @@ export const CardList = () => {
 
     useEffect(() => {
         (async () => {
-            setList(await ffetch());
+            setList(await getItems());
             setLoader(true)
         })();
     }, [])
@@ -20,7 +19,7 @@ export const CardList = () => {
         <div className="container">
             <h1 className="text-center my-4">Items</h1>
             { !loader &&
-                <img src={loaderImg} alt="loader" className="loader"/>
+                <Loader/>
             }
             { loader &&
                 <ul className="row g-4 justify-content-center ul-fix">
@@ -28,7 +27,7 @@ export const CardList = () => {
                         list.map((item) => {
                             return (
                                 <li key={item.id} className='col-auto'>
-                                    <ItemCard title={item.title} description={item.description} image={item.image} price={item.price}/>
+                                    <ItemCard id={item.id} title={item.title} description={item.description} image={item.image} price={item.price}/>
                                 </li>
                             )
                         })
