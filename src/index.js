@@ -1,7 +1,10 @@
 import ReactDOM from 'react-dom/client';
-import {MainLayout} from './MainLayout';
+import { BrowserRouter } from 'react-router-dom';
+import {Router} from './router/Router.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <MainLayout />
+  <BrowserRouter>
+    <Router />
+  </BrowserRouter>
 );
