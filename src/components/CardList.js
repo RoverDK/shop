@@ -17,7 +17,7 @@ export const CardList = () => {
 
     return (
         <div className="container">
-            <h1 className="text-center my-4">Items</h1>
+            <h1 className="text-center my-4 text-uppercase">Items</h1>
             { !loader &&
                 <Loader/>
             }

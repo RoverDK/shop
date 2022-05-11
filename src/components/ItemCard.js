@@ -2,13 +2,11 @@ import { Link } from "react-router-dom"
 
 export const ItemCard = ({id, title, description, image, price}) => {
     return (
-        <div className="card p-2" style={{width: '12rem'}}>
-            <div className="img-fix" >
-                <img src={`${image}`} className="card-img-top" alt="item"/>
-            </div>
+        <div className="card p-2" style={{maxWidth: '16rem'}}>
+            <img src={`${image}`} className="card-img-top img-fix" alt="item"/>
             <div className="card-body">
-                <h5 className="card-title">{title}</h5>
-                <p className="card-text">{description.length > 20 ? `${description.substring(0, 40)}...` : description}</p>
+                <h5 className="card-title">{title.length > 12 ? `${title.substring(0, 12)}...` : title}</h5>
+                <p className="card-text">{description.length > 40 ? `${description.substring(0, 40)}...` : description}</p>
                 <div className="buy d-flex justify-content-between align-items-center">
                     <p className='fw-bold m-0 fs-4'>{price}<span className='fst-italic'> $</span></p>
                     <Link className="btn btn-outline-dark" to={`/item/${id}`}>
